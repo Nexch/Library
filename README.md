@@ -69,6 +69,12 @@ To get a local copy up and running follow these simple steps:
 - Twitter: [@David Castillo](https://twitter.com/DavidLe97005129)
 - Linkedin: [@David Castillo](https://www.linkedin.com/in/david-castillo-61ba10b8/)
 
+👤 **Mauricio Tabilo**
+
+- Github: [@Nexch](https://github.com/Nexch)
+- Twitter: [@@MfinchT](https://twitter.com/MfinchT)
+- Linkedin: [linkedin](https://www.linkedin.com/in/Nexch)
+
 
 ## 🤝 Contributions
 
