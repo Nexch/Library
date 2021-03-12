@@ -80,6 +80,7 @@ class UI {
     container.insertBefore(div, form);
     setTimeout(() => document.querySelector('.alert').remove(), 2000);
   }
+
   static clearFields() {
     document.querySelector('#title').value = '';
     document.querySelector('#author').value = '';
