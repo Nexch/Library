@@ -1,11 +1,20 @@
 /* eslint-disable max-classes-per-file */
 class Book {
-  constructor(author, title, nPages) {
+  constructor(author, title, nPages, read) {
     this.author = author;
     this.title = title;
     this.nPages = nPages;
+    this.read = read;
+    this.id = title.slice(0, 3).toUpperCase() + nPages;
   }
 }
+
+function change(e) {
+  const elem = document.getElementById(e.target.id);
+  if (elem.innerHTML === 'Read') elem.innerHTML = 'Unread';
+  else elem.innerHTML = 'Read';
+}
+
 class UI {
   static displayBooks() {
     const StoredBooks = Store.getBooks();
@@ -20,9 +29,12 @@ class UI {
       <td>${book.title}</td>
       <td>${book.author}</td>
       <td>${book.nPages}</td>
+      <td class="has-text-centered"><button  id=${book.id} value="Read">Read</button></td>
       <td><a href="#" class="btn btn-danger btn-sm delete">Delete</a></td>
     `;
     list.appendChild(row);
+    const td = document.getElementById(book.id);
+    td.addEventListener('click', (e) => change(e));
   }
 
   static deleteBook(element) {
@@ -39,6 +51,11 @@ class UI {
     const form = document.querySelector('#book-form');
     container.insertBefore(div, form);
     setTimeout(() => document.querySelector('.alert').remove(), 2000);
+  }
+  static clearFields() {
+    document.querySelector('#title').value = '';
+    document.querySelector('#author').value = '';
+    document.querySelector('#nPages').value = '';
   }
 }
 class Store {
@@ -83,6 +100,7 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
     UI.addBookToList(book);
     Store.addBook(book);
     UI.showAlert('Book Added', 'success');
+    UI.clearFields();
   }
 });
 document.querySelector('#book-list').addEventListener('click', (e) => {
