@@ -9,9 +9,8 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
 </head>
 <body>
-
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+<div class="container">
+<h1 class="ml-auto mt-5">My Library</h1>
 <div class="form_box">
   <form id="book-form">
     <div class="form-group">
@@ -31,15 +30,17 @@
   <table class="table table-striped mt-4">
     <thead>
       <tr>
-        <th>Tittle</th>
         <th>Author</th>
+        <th>Title</th>
         <th>Number of pages</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody id="book-list">
 
     </tbody>
   </table>
+</div>
 </div>
 <script type="text/javascript" src="./scripts/book.js"></script>
 <!-- JQuery -->
